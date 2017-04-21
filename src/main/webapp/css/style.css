@@ -41,10 +41,6 @@ label{
     margin: 5pt 5pt;
 }
 
-span{
-    margin-right: 10pt;
-}
-
 
 .form{
     align-content: left;
@@ -61,7 +57,7 @@ span{
     border: solid;
     border-radius: 8pt;
     color: white;
-    margin: 5pt 0;
+    margin: 5pt 5pt;
     padding: 8px 26px;
     text-align: center;
     text-decoration: none;

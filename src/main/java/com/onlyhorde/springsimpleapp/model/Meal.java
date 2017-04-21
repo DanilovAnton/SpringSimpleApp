@@ -24,6 +24,10 @@ public class Meal {
         return dateTime;
     }
 
+    public Integer getId() {
+        return id;
+    }
+
     public String getDescription() {
         return description;
     }

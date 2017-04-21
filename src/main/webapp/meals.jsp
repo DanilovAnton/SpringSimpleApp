@@ -28,6 +28,7 @@
 <table>
     <thead>
     <tr>
+        <th>ID</th>
         <th>Дата</th>
         <th>Описание</th>
         <th>Калории</th>
@@ -35,6 +36,7 @@
     </thead>
     <c:forEach items="${meals}" var="meal">
         <tr class="${meal.exceed ? 'exceeded' : 'normal'}">
+            <td>${ meal.id }</td>
             <td>${fn:replace(meal.dateTime, 'T', ' ') }</td>
             <td>${ meal.description }</td>
             <td>${ meal.calories }</td>
