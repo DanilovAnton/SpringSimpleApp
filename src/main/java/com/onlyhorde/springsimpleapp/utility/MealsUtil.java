@@ -8,17 +8,18 @@ import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.Month;
 import java.util.*;
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
 
 public class MealsUtil {
     public static final int DEFAULT_CALORIES = 2000;
     private List<Meal> mealList = Arrays.asList(
-            new Meal(LocalDateTime.of(2015, Month.MAY, 30, 10, 0), "Завтрак", 500),
-            new Meal(LocalDateTime.of(2015, Month.MAY, 30, 13, 0), "Обед", 1000),
-            new Meal(LocalDateTime.of(2015, Month.MAY, 30, 20, 0), "Ужин", 500),
-            new Meal(LocalDateTime.of(2015, Month.MAY, 31, 10, 0), "Завтрак", 1000),
-            new Meal(LocalDateTime.of(2015, Month.MAY, 31, 13, 0), "Обед", 500),
-            new Meal(LocalDateTime.of(2015, Month.MAY, 31, 20, 0), "Ужин", 490)
+            new Meal(id, LocalDateTime.of(2015, Month.MAY, 30, 10, 0), "Завтрак", 500),
+            new Meal(id, LocalDateTime.of(2015, Month.MAY, 30, 13, 0), "Обед", 1000),
+            new Meal(id, LocalDateTime.of(2015, Month.MAY, 30, 20, 0), "Ужин", 500),
+            new Meal(id, LocalDateTime.of(2015, Month.MAY, 31, 10, 0), "Завтрак", 1000),
+            new Meal(id, LocalDateTime.of(2015, Month.MAY, 31, 13, 0), "Обед", 500),
+            new Meal(id, LocalDateTime.of(2015, Month.MAY, 31, 20, 0), "Ужин", 490)
     );
 
     public List<MealWithExceed> createList(){
@@ -32,7 +33,7 @@ public class MealsUtil {
         Map<LocalDate, Integer> caloriesSumByDate = checkMeals(mealList);
 
         return mealList.stream()
-                .map(p -> new MealWithExceed(p.getDateTime(), p.getDescription(), p.getCalories(),
+                .map(p -> new MealWithExceed(id, p.getDateTime(), p.getDescription(), p.getCalories(),
                         caloriesSumByDate.get(p.getDate()) >= DEFAULT_CALORIES))
                 .collect(Collectors.toList());
     }
@@ -43,7 +44,7 @@ public class MealsUtil {
 
         return mealList.stream().
                 filter(p -> p.getTime().compareTo(startTime) >= 0 && p.getTime().compareTo(endTime) <= 0)
-                .map(p -> new MealWithExceed(p.getDateTime(), p.getDescription(), p.getCalories(),
+                .map(p -> new MealWithExceed(id, p.getDateTime(), p.getDescription(), p.getCalories(),
                         caloriesSumByDate.get(p.getDate()) >= caloriesPerDay))
                 .collect(Collectors.toList());
     }

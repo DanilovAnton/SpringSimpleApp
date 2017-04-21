@@ -12,7 +12,20 @@
 <h2><a href="index.html">Home</a></h2>
 <h2>Meal list</h2>
 <hr>
-<table border="1" cellpadding="4" cellspacing="0">
+<div class="form">
+    <form method="post" action="add">
+        <br>
+        <label>Дата и время: <input type="datetime-local" name="dateTime"></label>
+        <br>
+        <label>Описание: <input type="text" name="description" value="Описание"></label>
+        <br>
+        <label>Калории: <input type="number" name="calories" value="0"></label>
+        <br>
+        <button class="btn" type="submit">Добавить</button>
+    </form>
+</div>
+<div>
+<table>
     <thead>
     <tr>
         <th>Дата</th>
@@ -27,6 +40,10 @@
             <td>${ meal.calories }</td>
         </tr>
     </c:forEach>
+</div>
 </table>
+
+
+
 </body>
 </html>
