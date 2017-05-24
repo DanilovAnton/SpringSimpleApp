@@ -17,6 +17,7 @@
     <servlet>
         <servlet-name>mealServlet</servlet-name>
         <servlet-class>com.onlyhorde.springsimpleapp.web.MealServlet</servlet-class>
+        <load-on-startup>0</load-on-startup>
     </servlet>
 
     <servlet-mapping>
