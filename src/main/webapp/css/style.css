@@ -40,23 +40,28 @@ label{
     font-weight: bold;
     margin: 5pt 5pt;
 }
-
+.title{
+    text-align: center;
+}
 
 .form{
-    align-content: left;
+    margin: auto;
+    /*text-align: center;*/
+    align-content: center;
     width: 400px;
-    height: 170px;
+    height: 200px;
+    border: solid;
 }
 
 .form form{
     text-align: right;
 }
 .btn {
-    background-color: #3c7caf;
+    background-color: #a3aaaf;
     cursor: pointer;
-    border: solid;
-    border-radius: 8pt;
-    color: white;
+    border: none;
+    border-radius: 4pt;
+    color: #000000;
     margin: 5pt 5pt;
     padding: 8px 26px;
     text-align: center;
@@ -65,7 +70,7 @@ label{
     font-size: 16px;
 }
 .btn:hover{
-    background-color: #1d91af;
+    background-color: #bec6cc;
 }
 
 .exceeded{
