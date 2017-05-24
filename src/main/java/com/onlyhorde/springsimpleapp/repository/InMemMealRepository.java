@@ -17,13 +17,7 @@ public class InMemMealRepository implements MealRepository{
     private AtomicInteger counter = new AtomicInteger(0);
 
     {
-//        MealsUtil.MEALSLIST.forEach(this::save); с использованием
-        save(new Meal(LocalDateTime.of(2015, Month.MAY, 30, 10, 0), "Завтрак", 500));
-        save(new Meal(LocalDateTime.of(2015, Month.MAY, 30, 13, 0), "Обед", 1000));
-        save(new Meal(LocalDateTime.of(2015, Month.MAY, 30, 20, 0), "Ужин", 500));
-        save(new Meal(LocalDateTime.of(2015, Month.MAY, 31, 10, 0), "Завтрак", 1000));
-        save(new Meal(LocalDateTime.of(2015, Month.MAY, 31, 13, 0), "Обед", 500));
-        save(new Meal(LocalDateTime.of(2015, Month.MAY, 31, 20, 0), "Ужин", 490));
+        MealsUtil.mealList.forEach(this::save);
     }
 
     @Override
